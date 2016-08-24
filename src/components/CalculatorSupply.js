@@ -37,7 +37,7 @@ class CalculatorSupply extends Component {
         <input type="text" onBlur={this.setYears} placeholder="Enter your age" />
         <input type="text" onBlur={this.setAmount} placeholder="Enter amount per day" />
       <button onClick={this.calculateSupply}>Calculate</button>
-      <h2>Lifetime supply: {this.state.supply}</h2>
+      <h2>Lifetime supplies: {this.state.supply}</h2>
       </div>
   }
 }

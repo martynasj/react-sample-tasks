@@ -23,7 +23,7 @@ class CalculatorAge extends React.Component {
   calculateAge = () => {
     const currentYear = new Date().getFullYear();
     const age = currentYear - this.state.input;
-    if (this.state.input > currentYear) {
+    if (this.state.input > currentYear || this.state.input.length < 4) {
       this.setState({age: ''})
     } else {
       this.setState({age: age});
