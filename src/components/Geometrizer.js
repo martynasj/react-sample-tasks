@@ -26,13 +26,17 @@ class Geometrizer extends Component {
   calcArea = () => {
     const radius = this.state.radius;
     const area = Math.PI * radius * radius;
-
+    this.setState({ area });
   }
 
   render() {
+    
+    const areaDiv = this.state.area ? <div>{this.state.area}</div> : null;
+    
     return <div>
       <input type="number" onChange={this.setRadius} placeholder="Enter radius"/>
       <button onClick={this.calcCircumference}>Calculate circumference</button>
+      {areaDiv}
     </div>
   };
 
