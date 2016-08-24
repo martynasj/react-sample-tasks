@@ -12,7 +12,7 @@ class CalculatorAge extends React.Component {
 
   onBlur = (event) => {
     const year = event.target.value;
-    if (year == '') {
+    if (year === '') {
       console.log('no data');
       this.setState({input: ''});
     } else {

@@ -25,7 +25,7 @@ class CalculatorSupply extends Component {
   calculateSupply = () => {
     const days = this.state.yearsLeft * 365;
     const supply = days * this.state.amountPerDay;
-    if(this.state.yearsLeft == 100 || this.state.amountPerDay == '') {
+    if(this.state.yearsLeft === 100 || this.state.amountPerDay === '') {
       console.log('invalid data');
     } else {
       this.setState({supply: supply})

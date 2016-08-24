@@ -5,25 +5,34 @@ class Geometrizer extends Component {
     super(props);
     this.state = {
       radius: 0,
-      circumference: ''
+      circumference: '',
+      area: ''
     }
   }
 
   setRadius = (event) => {
     const radius = event.target.value;
+    console.log(radius);
     this.setState({radius: radius});
   };
 
-  calcCircumference = () => {
+  calcCircumference = (event) => {
     const circumference = (2 * Math.PI * this.state.radius).toFixed(2);
-    this.setState({ circumference: circumference });
+    console.log(event.target.value);
+    //this.setState({ circumference: circumference });
+
   };
+
+  calcArea = () => {
+    const radius = this.state.radius;
+    const area = Math.PI * radius * radius;
+
+  }
 
   render() {
     return <div>
-      <input type="number" onBlur={this.setRadius} placeholder="Enter radius"/>
+      <input type="number" onChange={this.setRadius} placeholder="Enter radius"/>
       <button onClick={this.calcCircumference}>Calculate circumference</button>
-      <h2>The circumference is: {this.state.circumference}</h2>
     </div>
   };
 
